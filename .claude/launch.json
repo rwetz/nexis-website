@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "nexis-dev",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": [
+        "-c",
+        "export PATH=/home/ryan/.nvm/versions/node/v20.20.2/bin:$PATH; exec node node_modules/next/dist/bin/next start --port 3100"
+      ],
+      "port": 3100
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------ */
+/*  shadcn semantic tokens -> Tailwind utilities (remapped to the      */
+/*  Cursor-style design system in designsystem.md)                     */
+/* ------------------------------------------------------------------ */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+  --font-heading: var(--font-inter);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+:root {
+  --radius: 0.75rem; /* 12px card radius */
+
+  /* Surface + text (designsystem.md) */
+  --background: #f7f7f4;        /* canvas — warm cream */
+  --foreground: #26251e;        /* ink — warm near-black */
+  --card: #ffffff;              /* surface-card */
+  --card-foreground: #26251e;
+  --popover: #ffffff;
+  --popover-foreground: #26251e;
+
+  /* Brand — Cursor Orange, used scarcely */
+  --primary: #f54e00;
+  --primary-foreground: #ffffff;
+
+  --secondary: #e6e5e0;         /* surface-strong */
+  --secondary-foreground: #26251e;
+  --muted: #efeee8;             /* hairline-soft used as muted fill */
+  --muted-foreground: #807d72;  /* muted text */
+  --accent: #e6e5e0;
+  --accent-foreground: #26251e;
+  --destructive: #cf2d56;       /* semantic error */
+
+  --border: #e6e5e0;            /* hairline */
+  --input: #cfcdc4;             /* hairline-strong */
+  --ring: #f54e00;
+
+  --chart-1: #dfa88f;
+  --chart-2: #9fc9a2;
+  --chart-3: #9fbbe0;
+  --chart-4: #c0a8dd;
+  --chart-5: #c08532;
+
+  /* sidebar tokens (unused, kept for shadcn components) */
+  --sidebar: #fafaf7;
+  --sidebar-foreground: #26251e;
+  --sidebar-primary: #f54e00;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e6e5e0;
+  --sidebar-accent-foreground: #26251e;
+  --sidebar-border: #e6e5e0;
+  --sidebar-ring: #f54e00;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Nexis custom tokens — additive namespace                           */
+/*  (generates bg-*, text-*, border-* utilities + runtime CSS vars)    */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Surfaces & hairlines */
+  --color-canvas: #f7f7f4;
+  --color-canvas-soft: #fafaf7;
+  --color-surface-card: #ffffff;
+  --color-surface-strong: #e6e5e0;
+  --color-hairline: #e6e5e0;
+  --color-hairline-soft: #efeee8;
+  --color-hairline-strong: #cfcdc4;
+
+  /* Text */
+  --color-ink: #26251e;
+  --color-body: #5a5852;
+  --color-body-strong: #26251e;
+  --color-ink-muted: #807d72;
+  --color-muted-soft: #a09c92;
+
+  /* Brand */
+  --color-brand: #f54e00;
+  --color-brand-active: #d04200;
+  --color-on-brand: #ffffff;
+
+  /* AI-timeline pastels (scoped chromatic depth) */
+  --color-tl-thinking: #dfa88f;
+  --color-tl-grep: #9fc9a2;
+  --color-tl-read: #9fbbe0;
+  --color-tl-edit: #c0a8dd;
+  --color-tl-done: #c08532;
+
+  /* Semantic */
+  --color-success: #1f8a65;
+  --color-error: #cf2d56;
+
+  /* Dark shell (shortcuts + CTA bands) */
+  --color-shell: #181d26;
+
+  /* Interactive-demo dark tokens (nexis-site.md §8.1) */
+  --color-n-bg: #1b2232;
+  --color-n-card: #242e3f;
+  --color-n-hover: #2d3a4f;
+  --color-n-fg: #f0f4f9;
+  --color-n-primary: #d8e4ef;
+  --color-n-muted: #2c3a50;
+  --color-n-mutedfg: #8a9db8;
+  --color-n-ring: #4d6480;
+  --color-n-green: #4ade80;
+  --color-n-red: #f87171;
+  --color-n-yellow: #fbbf24;
+  --color-n-blue: #60a5fa;
+  --color-n-purple: #a78bfa;
+  --color-n-teal: #2dd4bf;
+  --color-n-cyan: #06b6d4;
+  --color-n-orange: #f97316;
+  --color-n-pink: #ec4899;
+
+  /* Radius extras */
+  --radius-pill: 9999px;
+}
+
+/* rgba border tokens for the dark demo (can't live in @theme cleanly) */
+:root {
+  --n-border: rgba(255, 255, 255, 0.09);
+  --n-border-bright: rgba(255, 255, 255, 0.13);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans antialiased;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-canvas text-ink;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Editorial display type — CursorGothic substitute (Inter @400,      */
+/*  negative tracking). Never bold: the magazine voice depends on it.  */
+/* ------------------------------------------------------------------ */
+@layer components {
+  .display-mega {
+    font-weight: 400;
+    font-size: clamp(2rem, 7vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  .display-lg {
+    font-weight: 400;
+    font-size: clamp(1.75rem, 4vw, 36px);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  .display-md {
+    font-weight: 400;
+    font-size: clamp(1.4rem, 3vw, 26px);
+    line-height: 1.25;
+    letter-spacing: -0.0125em;
+  }
+  .display-sm {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+  }
+  .caption-label {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.4;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  /* Recurring dotted texture (light sections) */
+  .dot-grid {
+    background-image: radial-gradient(
+      circle,
+      color-mix(in oklch, var(--color-ink) 7%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+  .dot-grid-dark {
+    background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+}
+
+/* Thin custom scrollbars inside the demo panes */
+.nx-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.nx-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+.nx-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes nx-bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-3px); opacity: 1; }
+}
