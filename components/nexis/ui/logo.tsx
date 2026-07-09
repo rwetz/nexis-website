@@ -1,11 +1,6 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-/**
- * Placeholder Nexis app icon.
- * The real asset is `src/assets/logo (1) (1).png` (nexis-site.md §10) — drop it
- * into /public/nexis/logo.png and swap this for <Image> when available.
- * Rendered at 22% border-radius per the original NexisLogo.
- */
 export function NexisLogo({
   size = 34,
   className,
@@ -14,31 +9,14 @@ export function NexisLogo({
   className?: string;
 }) {
   return (
-    <span
-      className={cn("relative inline-grid place-items-center", className)}
-      style={{
-        width: size,
-        height: size,
-        borderRadius: size * 0.22,
-        background: "linear-gradient(150deg, #2d3a4f 0%, #1b2232 100%)",
-        boxShadow: "inset 0 0 0 1px rgba(255,255,255,0.08)",
-      }}
-      aria-hidden
-    >
-      <svg
-        width={size * 0.58}
-        height={size * 0.58}
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#d8e4ef"
-        strokeWidth={2.2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M5 8l4 4-4 4" />
-        <path d="M13 16h6" />
-      </svg>
-    </span>
+    <Image
+      src="/nexis/logo.png"
+      alt="Nexis"
+      width={size}
+      height={size}
+      className={cn("rounded-[22%]", className)}
+      style={{ width: size, height: size }}
+    />
   );
 }
 
