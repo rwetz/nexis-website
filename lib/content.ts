@@ -22,6 +22,7 @@ export const SITE = {
     "An open-source, AI-native terminal and developer environment built with Tauri and React. Under 10 MB, zero telemetry, runs entirely on your own API keys.",
   repo: "https://github.com/rwetz/Nexis",
   releases: "https://github.com/rwetz/Nexis/releases",
+  wiki: "https://wiki.nexisdev.org",
   fallbackVersion: "v1.13.0",
 } as const;
 

@@ -6,7 +6,7 @@
       "runtimeExecutable": "/bin/bash",
       "runtimeArgs": [
         "-c",
-        "export PATH=/home/ryan/.nvm/versions/node/v20.20.2/bin:$PATH; exec node node_modules/next/dist/bin/next start --port 3100"
+        "export PATH=/home/ryan/.nvm/versions/node/v20.20.2/bin:$PATH; cd /home/ryan/dev/nexis-site; exec npx --yes serve out -l 3100"
       ],
       "port": 3100
     }

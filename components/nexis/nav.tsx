@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { BookOpen, Menu, X } from "lucide-react";
 import { Btn } from "@/components/nexis/ui/btn";
 import { GitHubIcon, NexisLogo } from "@/components/nexis/ui/logo";
 import signatureImg from "@/assets/signature.png";
@@ -63,6 +63,10 @@ export function Nav() {
           >
             <GitHubIcon className="size-[18px]" />
           </a>
+          <Btn href={SITE.wiki} variant="secondary" size="md">
+            <BookOpen className="size-4" />
+            Wiki
+          </Btn>
           <Btn href={SITE.releases} target="_blank" rel="noreferrer" size="md">
             Download
           </Btn>
@@ -96,6 +100,13 @@ export function Nav() {
               {l.label}
             </a>
           ))}
+          <a
+            href={SITE.wiki}
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-body hover:bg-surface-strong hover:text-ink"
+          >
+            <BookOpen className="size-4" /> Wiki
+          </a>
           <div className="mt-2 flex items-center gap-3">
             <Btn href={SITE.repo} target="_blank" rel="noreferrer" variant="secondary">
               <GitHubIcon className="size-4" /> GitHub
