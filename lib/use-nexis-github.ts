@@ -32,11 +32,15 @@ export function useNexisGithub(): NexisGithub {
   useEffect(() => {
     let cancelled = false;
 
-    // 1. Hydrate from cache immediately for instant paint.
+    // 1. Hydrate from cache immediately for instant paint. This must stay in
+    //    the effect (not a lazy useState initializer): the initializer also
+    //    runs during SSR where sessionStorage doesn't exist, and a cached
+    //    client value would mismatch the server-rendered fallback.
     try {
       const cached = sessionStorage.getItem(CACHE_KEY);
       if (cached) {
         const parsed = JSON.parse(cached) as NexisGithub;
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional one-shot cache hydration
         setData({ ...parsed, loading: false });
       }
     } catch {
