@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Download, Star } from "lucide-react";
 import { Btn } from "@/components/nexis/ui/btn";
+import { FluidCanvas } from "@/components/nexis/fluid-canvas";
 import { GitHubIcon, NexisLogo } from "@/components/nexis/ui/logo";
 import { StatsStrip } from "@/components/nexis/stats-strip";
 import { SITE, ATTRIBUTION } from "@/lib/content";
@@ -15,6 +16,8 @@ export function Hero() {
   return (
     <section id="hero" className="dot-grid relative overflow-hidden border-b border-hairline">
       <div className="mx-auto max-w-[1200px] px-5 py-20 sm:px-8 sm:py-28">
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-14">
+          <div>
         <motion.p {...fadeUp(0)} className="caption-label text-brand">
           Project
         </motion.p>
@@ -83,6 +86,18 @@ export function Hero() {
             Download {gh.version}
           </Btn>
         </motion.div>
+          </div>
+
+          {/* Generative shader card */}
+          <motion.div
+            {...fadeUp(0.24)}
+            className="relative overflow-hidden rounded-[20px] border border-hairline bg-surface-card shadow-[0_1px_2px_rgba(38,37,30,0.05),0_12px_32px_-12px_rgba(38,37,30,0.18)]"
+          >
+            <FluidCanvas className="h-[300px] w-full sm:h-[380px] lg:h-[440px]" />
+            {/* Inner hairline keeps the canvas edge crisp against the card */}
+            <div className="pointer-events-none absolute inset-0 rounded-[20px] ring-1 ring-inset ring-black/10" />
+          </motion.div>
+        </div>
 
         {/* Stats strip */}
         <motion.div {...fadeUp(0.28)} className="mt-14 border-t border-hairline pt-8">
