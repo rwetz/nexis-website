@@ -15,8 +15,8 @@ export function FeaturesGrid() {
           Everything in one window.
         </motion.h2>
         <motion.p {...fadeUp(0.1)} className="mt-4 max-w-xl text-body">
-          A terminal, editor, AI agent, debugger, and more — a full developer
-          environment that never makes you leave the app.
+          A terminal, editor, AI agent, local ML lab, repository map, and SVG
+          studio — organized around the work you actually do.
         </motion.p>
 
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -42,8 +42,8 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-body">
-            Open-source, AI-native terminal &amp; developer environment. Under
-            10&nbsp;MB, zero telemetry.
+            Open-source, AI-native terminal &amp; developer environment. Local-first,
+            zero telemetry.
           </p>
         </div>
 

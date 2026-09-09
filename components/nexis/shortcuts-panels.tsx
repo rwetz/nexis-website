@@ -53,11 +53,12 @@ export function ShortcutsPanels() {
             Everything a click away
           </motion.p>
           <motion.h2 {...fadeUp(0.05)} className="display-lg mt-3 text-white">
-            {PANELS.length} sidebar panels.
+            Packs, not clutter.
           </motion.h2>
           <motion.p {...fadeUp(0.1)} className="mt-4 max-w-md text-white/60">
-            Dock any tool beside your workspace — from source control and tests
-            to an AI agent queue and prompt templates.
+            Seven presets and nine feature packs tune the surface without
+            installing or removing code. Every tool remains a click away when
+            its pack is enabled.
           </motion.p>
 
           <div className="mt-8 flex flex-wrap gap-2">

@@ -26,7 +26,7 @@ export function StatsStrip({ gh }: { gh: NexisGithub }) {
   return (
     <div className="grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4 lg:flex lg:items-start lg:gap-12">
       <Stat value={gh.version} label="Latest release" loading={gh.loading && gh.version === undefined} />
-      <Stat value="< 10 MB" label="App size" />
+      <Stat value="7" label="Workbench presets" />
       <Stat value="0" label="Telemetry" />
       <Stat value="3" label="Platforms" />
       {gh.stars !== null && (

@@ -9,6 +9,9 @@ import {
   Globe,
   Server,
   Cpu,
+  Map,
+  Activity,
+  Paintbrush,
   type LucideIcon,
 } from "lucide-react";
 
@@ -19,11 +22,11 @@ export const SITE = {
   name: "Nexis",
   tagline: "Everything in one window.",
   description:
-    "An open-source, AI-native terminal and developer environment built with Tauri and React. Under 10 MB, zero telemetry, runs entirely on your own API keys.",
+    "An open-source, AI-native terminal and developer environment with focused workbenches for code, local ML, repository intelligence, and SVG creation. Zero telemetry; use your own API keys or run local models.",
   repo: "https://github.com/rwetz/Nexis",
   releases: "https://github.com/rwetz/Nexis/releases",
   wiki: "https://wiki.nexisdev.org",
-  fallbackVersion: "v1.13.0",
+  fallbackVersion: "v1.26.0",
 } as const;
 
 // Fork / attribution block (Apache-2.0)
@@ -35,7 +38,7 @@ export const ATTRIBUTION = {
 } as const;
 
 /* ------------------------------------------------------------------ */
-/*  Features grid — 10 cards (nexis-site.md §4)                        */
+/*  Features grid (nexis-site.md §4)                                   */
 /* ------------------------------------------------------------------ */
 export type Feature = {
   icon: LucideIcon;
@@ -74,8 +77,8 @@ export const FEATURES: Feature[] = [
     bullets: [
       "Reads & edits files, runs shell commands",
       "Searches the codebase, spawns sub-agents",
-      "Claude, GPT-4, Gemini, Ollama support",
-      "Keys stored in OS keychain — zero telemetry",
+      "14 cloud, compatible, and local providers",
+      "Policy-gated tools + Git-backed checkpoints",
     ],
   },
   {
@@ -113,9 +116,9 @@ export const FEATURES: Feature[] = [
     title: "Notebooks",
     color: "#fbbf24",
     bullets: [
-      "Jupyter-style interactive notebooks",
-      "Run cells inline with rich output",
-      "Mix code, markdown, and results",
+      "Static Jupyter notebook viewer",
+      "Code, markdown, stream, and error output",
+      "No kernel or notebook server required",
     ],
   },
   {
@@ -140,12 +143,42 @@ export const FEATURES: Feature[] = [
   },
   {
     icon: Cpu,
-    title: "Process & Port Manager",
+    title: "System & Process Tools",
     color: "#ec4899",
     bullets: [
       "View all running processes",
       "Monitor open ports alongside your workspace",
       "Kill or inspect processes inline",
+    ],
+  },
+  {
+    icon: Map,
+    title: "Atlas",
+    color: "#38bdf8",
+    bullets: [
+      "Machine-wide repository status",
+      "Isometric map — files as buildings",
+      "Open repos as workspaces or terminal tabs",
+    ],
+  },
+  {
+    icon: Activity,
+    title: "Benchmark & ML Lab",
+    color: "#c084fc",
+    bullets: [
+      "Compare ONNX and GGUF backends",
+      "Train small models with a local engine",
+      "Live metrics, run history, and reports",
+    ],
+  },
+  {
+    icon: Paintbrush,
+    title: "SVG Studio",
+    color: "#fb7185",
+    bullets: [
+      "Source and direct canvas editing",
+      "Shapes, palettes, backdrops, icon review",
+      "SVG, PNG, favicon, SMIL, and CSS export",
     ],
   },
 ];
@@ -166,6 +199,7 @@ export const SHORTCUTS: Shortcut[] = [
   { action: "Open settings", keys: ["Ctrl", ","] },
   { action: "New window", keys: ["Ctrl", "Shift", "N"] },
   { action: "Switch workspace", keys: ["Ctrl", "`"] },
+  { action: "Previous / next prompt", keys: ["Ctrl", "Shift", "↑ / ↓"] },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -195,6 +229,17 @@ export const PANELS: string[] = [
   "Shell Snippets",
   "SSH",
   "Release",
+  "System Monitor",
+  "Command History",
+  "Atlas",
+  "Benchmark",
+  "HTTP Client",
+  "Web Tools",
+  "Palette",
+  "Backdrop",
+  "Icon Set",
+  "Favicon Set",
+  "Animator",
 ];
 
 /* ------------------------------------------------------------------ */
@@ -227,7 +272,7 @@ export const SCREENSHOTS: Screenshot[] = [
     accent: "#a78bfa",
     file: "ai.png",
     caption:
-      "Bring your own API key. Claude, GPT-4, Gemini, or a local Ollama model — zero telemetry.",
+      "Bring your own API key or connect a local model. Tool policies keep agent actions visible and configurable.",
   },
   {
     label: "Terminal",
@@ -248,14 +293,14 @@ export const SCREENSHOTS: Screenshot[] = [
     accent: "#f97316",
     file: "features.png",
     caption:
-      "Every capability listed and searchable from inside the app. Discover what Nexis can do at a glance.",
+      "Choose presets and feature packs so the workbench matches what you are building.",
   },
   {
     label: "Settings",
     accent: "#f97316",
     file: "settings.png",
     caption:
-      "Granular control over themes, keybinds, AI models, fonts, and workspace behaviour.",
+      "Granular control over themes, feature packs, privacy, agents, models, fonts, and workspace behaviour.",
   },
   {
     label: "Keyboard shortcuts",

@@ -22,7 +22,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Nexis",
   description:
-    "Nexis is an open-source, AI-native terminal and developer environment built with Tauri and React. Under 10 MB, zero telemetry, runs on your own API keys.",
+    "Nexis is an open-source, AI-native terminal and developer environment with local ML, repository intelligence, SVG tools, and zero telemetry.",
 };
 
 export default function RootLayout({
