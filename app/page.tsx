@@ -6,12 +6,14 @@ import { ScreenshotShowcase } from "@/components/nexis/screenshot-showcase";
 import { NexisDemo } from "@/components/nexis/demo/nexis-demo";
 import { CTA } from "@/components/nexis/cta";
 import { Footer } from "@/components/nexis/footer";
+import { MotionProvider } from "@/components/nexis/motion-provider";
 
 export default function Home() {
   return (
-    <>
+    <MotionProvider>
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <Nav />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <FeaturesGrid />
         <ShortcutsPanels />
@@ -20,6 +22,6 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
-    </>
+    </MotionProvider>
   );
 }

@@ -4,9 +4,11 @@ import { cn } from "@/lib/utils";
 export function NexisLogo({
   size = 34,
   className,
+  priority = false,
 }: {
   size?: number;
   className?: string;
+  priority?: boolean;
 }) {
   return (
     <Image
@@ -14,6 +16,7 @@ export function NexisLogo({
       alt="Nexis"
       width={size}
       height={size}
+      priority={priority}
       className={cn("rounded-[22%]", className)}
       style={{ width: size, height: size }}
     />

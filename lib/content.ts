@@ -22,7 +22,7 @@ export const SITE = {
   name: "Nexis",
   tagline: "Everything in one window.",
   description:
-    "An open-source, AI-native terminal and developer environment with focused workbenches for code, local ML, repository intelligence, and SVG creation. Zero telemetry; use your own API keys or run local models.",
+    "An open-source, AI-native terminal and developer environment with focused workbenches for code, local ML, repository intelligence, and SVG creation. No built-in usage analytics; use your own API keys or run local models.",
   repo: "https://github.com/rwetz/Nexis",
   releases: "https://github.com/rwetz/Nexis/releases",
   wiki: "https://wiki.nexisdev.org",

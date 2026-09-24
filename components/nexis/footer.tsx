@@ -21,6 +21,14 @@ const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
     ],
   },
   {
+    title: "Site",
+    links: [
+      { label: "Privacy & storage", href: "/privacy/" },
+      { label: "Accessibility", href: "/accessibility/" },
+      { label: "Third-party notices", href: "/third-party-notices/" },
+    ],
+  },
+  {
     title: "Credits",
     links: [
       { label: "Terax (upstream)", href: ATTRIBUTION.terax },
@@ -33,7 +41,7 @@ const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
 export function Footer() {
   return (
     <footer className="dot-grid border-t border-hairline bg-canvas">
-      <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-8 px-5 py-16 sm:px-8 md:grid-cols-4">
+      <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-8 px-5 py-16 sm:px-8 lg:grid-cols-5">
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center gap-2">
             <NexisLogo size={28} />
@@ -43,7 +51,7 @@ export function Footer() {
           </div>
           <p className="mt-3 max-w-xs text-sm leading-relaxed text-body">
             Open-source, AI-native terminal &amp; developer environment. Local-first,
-            zero telemetry.
+            with no built-in usage analytics.
           </p>
         </div>
 
@@ -55,8 +63,8 @@ export function Footer() {
                 <li key={l.label}>
                   <a
                     href={l.href}
-                    target={l.href.startsWith("#") ? undefined : "_blank"}
-                    rel={l.href.startsWith("#") ? undefined : "noreferrer"}
+                    target={l.href.startsWith("http") ? "_blank" : undefined}
+                    rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-sm text-body transition-colors hover:text-ink"
                   >
                     {l.label}
@@ -71,7 +79,7 @@ export function Footer() {
       <div className="border-t border-hairline">
         <div className="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-2 px-5 py-6 text-sm text-ink-muted sm:flex-row sm:px-8">
           <span>
-            Forked from Terax · Licensed under {ATTRIBUTION.license}
+            Nexis app: {ATTRIBUTION.license} · Website source: MIT
           </span>
           <span>© {SITE.name}</span>
         </div>

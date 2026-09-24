@@ -22,7 +22,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Nexis",
   description:
-    "Nexis is an open-source, AI-native terminal and developer environment with local ML, repository intelligence, SVG tools, and zero telemetry.",
+    "Nexis is an open-source, AI-native terminal and developer environment with local ML, repository intelligence, SVG tools, and no built-in usage analytics.",
 };
 
 export default function RootLayout({
@@ -35,6 +35,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${jetbrains.variable} h-full`}
     >
+      <head><meta name="referrer" content="strict-origin-when-cross-origin" /></head>
       <body className="min-h-full">{children}</body>
     </html>
   );

@@ -11,14 +11,13 @@ export type NexisGithub = {
   loading: boolean;
 };
 
-const CACHE_KEY = "nexis_gh_v1";
 const REPO_API = "https://api.github.com/repos/rwetz/Nexis";
 const RELEASE_API = "https://api.github.com/repos/rwetz/Nexis/releases/latest";
 
 /**
  * Live GitHub stats for rwetz/Nexis (nexis-site.md §2).
- * Shows the sessionStorage-cached value immediately, then refreshes in the
- * background. Falls back to SITE.fallbackVersion when the network is down.
+ * Fetches public stats in the background without writing browser storage.
+ * Falls back to SITE.fallbackVersion when the network is down.
  */
 export function useNexisGithub(): NexisGithub {
   const [data, setData] = useState<NexisGithub>({
@@ -32,22 +31,7 @@ export function useNexisGithub(): NexisGithub {
   useEffect(() => {
     let cancelled = false;
 
-    // 1. Hydrate from cache immediately for instant paint. This must stay in
-    //    the effect (not a lazy useState initializer): the initializer also
-    //    runs during SSR where sessionStorage doesn't exist, and a cached
-    //    client value would mismatch the server-rendered fallback.
-    try {
-      const cached = sessionStorage.getItem(CACHE_KEY);
-      if (cached) {
-        const parsed = JSON.parse(cached) as NexisGithub;
-        // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional one-shot cache hydration
-        setData({ ...parsed, loading: false });
-      }
-    } catch {
-      /* ignore malformed cache */
-    }
-
-    // 2. Refresh from the API in the background.
+    // Refresh from the API in the background.
     (async () => {
       try {
         const [repoRes, relRes] = await Promise.all([
@@ -66,11 +50,6 @@ export function useNexisGithub(): NexisGithub {
           loading: false,
         };
         setData(next);
-        try {
-          sessionStorage.setItem(CACHE_KEY, JSON.stringify(next));
-        } catch {
-          /* storage may be unavailable */
-        }
       } catch {
         if (!cancelled) setData((d) => ({ ...d, loading: false }));
       }

@@ -88,5 +88,7 @@ showcase; filenames are already mapped.
 
 ## License
 
-Site code is [MIT](LICENSE). Nexis itself is Apache-2.0, forked from
-[Terax](https://github.com/crynta/terax-ai) by crynta.
+Original site code is [MIT](LICENSE). The adapted React Bits Magnet and
+SpotlightCard components retain their separate MIT + Commons Clause terms in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Nexis itself is Apache-2.0,
+forked from [Terax](https://github.com/crynta/terax-ai) by crynta.

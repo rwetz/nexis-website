@@ -74,9 +74,12 @@ export function Nav() {
 
         {/* Mobile toggle */}
         <button
-          className="text-ink md:hidden"
+          type="button"
+          className="rounded-md p-2 text-ink md:hidden"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
         >
           {open ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
@@ -84,6 +87,7 @@ export function Nav() {
 
       {/* Mobile menu */}
       <div
+        id="mobile-navigation"
         className={cn(
           "overflow-hidden border-t border-hairline bg-canvas md:hidden",
           open ? "block" : "hidden"
