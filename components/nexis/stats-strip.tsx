@@ -2,6 +2,7 @@
 
 import { Skeleton } from "@/components/ui/skeleton";
 import type { NexisGithub } from "@/lib/use-nexis-github";
+import { CountUp } from "@/components/nexis/react-bits/count-up";
 
 function Stat({
   value,
@@ -26,11 +27,11 @@ export function StatsStrip({ gh }: { gh: NexisGithub }) {
   return (
     <div className="grid grid-cols-2 gap-x-8 gap-y-6 sm:grid-cols-4 lg:flex lg:items-start lg:gap-12">
       <Stat value={gh.version} label="Latest release" loading={gh.loading && gh.version === undefined} />
-      <Stat value="7" label="Workbench presets" />
+      <Stat value={<CountUp to={7} />} label="Workbench presets" />
       <Stat value="0" label="App analytics" />
-      <Stat value="3" label="Platforms" />
+      <Stat value={<CountUp to={3} />} label="Platforms" />
       {gh.stars !== null && (
-        <Stat value={gh.stars.toLocaleString()} label="GitHub stars" />
+        <Stat value={<CountUp to={gh.stars} />} label="GitHub stars" />
       )}
     </div>
   );

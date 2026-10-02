@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Download, Star } from "lucide-react";
 import { Btn } from "@/components/nexis/ui/btn";
-import { FluidCanvas } from "@/components/nexis/fluid-canvas";
+import { LazyFluidCanvas } from "@/components/nexis/fluid-canvas-lazy";
 import { GitHubIcon, NexisLogo } from "@/components/nexis/ui/logo";
 import { StatsStrip } from "@/components/nexis/stats-strip";
 import { SITE, ATTRIBUTION } from "@/lib/content";
@@ -99,7 +99,7 @@ export function Hero() {
             {...fadeUp(0.24)}
             className="hero-art relative overflow-hidden rounded-[28px] border border-white/15 bg-[#111927] shadow-[0_40px_100px_-28px_rgba(0,0,0,0.75)]"
           >
-            <FluidCanvas className="h-[280px] w-full sm:h-[380px] lg:h-[510px]" />
+            <LazyFluidCanvas className="h-[280px] w-full sm:h-[380px] lg:h-[510px]" />
             <div className="pointer-events-none absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#0c121c]/85 to-transparent px-6 pb-6 pt-20">
               <p className="font-mono text-[11px] uppercase tracking-[.24em] text-white/50">Built to stay in flow</p>
               <p className="mt-1 text-lg text-white">Terminal · Editor · AI · ML</p>

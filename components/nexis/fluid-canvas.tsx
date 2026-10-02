@@ -2,8 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-/* Palette baked into the shader, mirrored here for the no-WebGL fallback. */
-const PALETTE = ["#21344d", "#ffd09b", "#ff853d", "#e54a20", "#76a8ad"];
+import { FLUID_FALLBACK_BG } from "@/components/nexis/fluid-fallback";
 
 const CFG = {
   uniforms: { u_scale: 2.5, u_warp: 3, u_speed: 1, u_contrast: 1.35 },
@@ -316,10 +315,7 @@ export function FluidCanvas({ className }: { className?: string }) {
       style={
         live
           ? undefined
-          : {
-              // Static stand-in drawn from the same palette.
-              background: `radial-gradient(120% 90% at 20% 15%, ${PALETTE[1]} 0%, ${PALETTE[2]} 30%, ${PALETTE[3]} 55%, ${PALETTE[0]} 100%)`,
-            }
+          : { background: FLUID_FALLBACK_BG }
       }
     />
   );

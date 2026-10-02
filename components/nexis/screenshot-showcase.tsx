@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SCREENSHOTS } from "@/lib/content";
 import { SCREENSHOT_IMAGES } from "@/components/nexis/screenshot-images";
 import { fadeUp } from "@/lib/motion";
+import { Tilt } from "@/components/nexis/react-bits/tilt";
 
 export function ScreenshotShowcase() {
   const [active, setActive] = useState(0);
@@ -33,7 +34,8 @@ export function ScreenshotShowcase() {
           </div>
         </div>
 
-        <div className="gallery-window mt-10">
+        <Tilt className="mt-10">
+        <div className="gallery-window">
           <div className="gallery-toolbar" aria-hidden="true"><span /><span /><span /><p>NEXIS / {shot.label.toUpperCase()}</p></div>
           <div className="gallery-image-wrap">
             <AnimatePresence mode="wait" initial={false}>
@@ -43,6 +45,7 @@ export function ScreenshotShowcase() {
             </AnimatePresence>
           </div>
         </div>
+        </Tilt>
 
         <div className="mt-5 flex flex-wrap items-baseline justify-between gap-2">
           <h3 className="text-xl font-semibold tracking-tight text-ink">{shot.label}</h3>
