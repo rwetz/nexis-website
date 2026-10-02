@@ -52,7 +52,7 @@ export function FeaturesGrid() {
         <div className="mt-14 border-t border-white/10 pt-8">
           <h3 className="text-xl font-medium tracking-tight">And everything around the work.</h3>
           <p className="mt-2 max-w-xl text-sm text-white/55">Explore the other tools without wading through another wall of cards.</p>
-          <div className="mt-6 grid gap-3 md:grid-cols-2">
+          <div className="mt-6 grid items-start gap-3 md:grid-cols-2">
             {FEATURES.slice(6).map((feature) => {
               const Icon = feature.icon;
               return (
