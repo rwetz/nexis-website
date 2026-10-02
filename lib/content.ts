@@ -258,7 +258,7 @@ export const PANELS: string[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/*  Screenshot showcase — 8 entries (nexis-site.md §7)                 */
+/*  Screenshot showcase — 12 entries (nexis-site.md §7)                */
 /* ------------------------------------------------------------------ */
 export type Screenshot = {
   label: string;
@@ -271,57 +271,85 @@ export const SCREENSHOTS: Screenshot[] = [
   {
     label: "Welcome screen",
     accent: "#60a5fa",
-    file: "welcome.png",
+    file: "welcome.webp",
     caption:
-      "Clean start. Quick access to recent workspaces and projects the moment you open the app.",
+      "A particle-built wordmark and the shortcuts you need first. It is what you see when no tabs are open.",
   },
   {
     label: "Code editor",
     accent: "#2dd4bf",
-    file: "editor.png",
+    file: "editor.webp",
     caption:
-      "Syntax highlighting, AI inline completions, breadcrumbs, and a minimap — all in one pane.",
+      "CodeMirror 6 with breadcrumbs, a minimap, AI inline completions and per-hunk diff approval.",
+  },
+  {
+    label: "Spotlight",
+    accent: "#38bdf8",
+    file: "spotlight.webp",
+    caption:
+      "Ctrl/Cmd+P finds files and commands with a live preview. Subsequence ranking means “mtx” finds modules/terminal/index.ts.",
   },
   {
     label: "AI agent",
     accent: "#a78bfa",
-    file: "ai.png",
+    file: "ai.webp",
     caption:
-      "Bring your own API key or connect a local model. Tool policies keep agent actions visible and configurable.",
+      "Chat, Queue, Refactor, Templates and Review in one AI window. Bring your own key or run a local model.",
   },
   {
     label: "Terminal",
     accent: "#4ade80",
-    file: "terminal.png",
+    file: "terminal.webp",
     caption:
-      "Full PTY with WebGL rendering. Split panes, tab history, and shell integration built in.",
+      "Full PTY with WebGL rendering, split panes and shell integration.",
   },
   {
-    label: "Markdown viewer",
-    accent: "#8a9db8",
-    file: "markdown.png",
+    label: "Documents",
+    accent: "#e2e8f0",
+    file: "documents-editor.webp",
     caption:
-      "Render README files, docs, and notes inline. No switching to a browser to preview markdown.",
+      "Rich-text editing for Markdown and Word in its own window, with local PDF export.",
   },
   {
-    label: "Feature browser",
+    label: "Source control",
     accent: "#f97316",
-    file: "features.png",
+    file: "source-control.webp",
     caption:
-      "Choose presets and feature packs so the workbench matches what you are building.",
+      "Stage, commit, push and review changes beside the code, with AI-written commit and PR descriptions.",
   },
   {
-    label: "Settings",
-    accent: "#f97316",
-    file: "settings.png",
+    label: "Atlas",
+    accent: "#38bdf8",
+    file: "atlas.webp",
     caption:
-      "Granular control over themes, feature packs, privacy, agents, models, fonts, and workspace behaviour.",
+      "Every repo on the machine at a glance: branch, sync state, changes and a 53-week commit heatmap.",
+  },
+  {
+    label: "SVG Studio",
+    accent: "#fb7185",
+    file: "svg-studio.webp",
+    caption:
+      "Draw, palettes, generative backdrops, icon review, favicons and animation in one workbench window.",
+  },
+  {
+    label: "AI orb",
+    accent: "#c084fc",
+    file: "orb.webp",
+    caption:
+      "26 animated orb styles that think and speak with the agent. Ten follow your theme.",
+  },
+  {
+    label: "Feature packs",
+    accent: "#f97316",
+    file: "features.webp",
+    caption:
+      "Presets and packs tune the surface without installing or removing code.",
   },
   {
     label: "Keyboard shortcuts",
     accent: "#fbbf24",
-    file: "shortcuts.png",
+    file: "shortcuts.webp",
     caption:
-      "Every command is customizable. Remap anything from a searchable shortcuts panel.",
+      "Every command is remappable from a searchable shortcuts panel.",
   },
 ];

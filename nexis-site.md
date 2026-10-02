@@ -4,8 +4,8 @@ Source: `minimal-design` branch, [src/components/Nexis.jsx](src/components/Nexis
 Route: `#nexis` (hash-routed subpage, see `src/App.jsx`, `src/components/CommandPalette.jsx`, `src/components/Projects.jsx`, `src/components/Hero.jsx`).
 
 Screenshot assets copied to `nexis-site-assets/` in this repo root:
-`ai.png`, `editor.png`, `features.png`, `markdown.png`, `settings.png`, `shortcuts.png`, `terminal.png`, `welcome.png`
-(originals live at `src/assets/nexis/*.png` on `minimal-design`; the page also imports `src/assets/logo (1) (1).png` as the Nexis app icon and `src/assets/signature.png` for the nav signature mark).
+`welcome.webp`, `editor.webp`, `spotlight.webp`, `ai.webp`, `terminal.webp`, `documents-editor.webp`, `source-control.webp`, `atlas.webp`, `svg-studio.webp`, `orb.webp`, `features.webp`, `shortcuts.webp` in `assets/`, captured from the real app by Nexis's `e2e/specs/screenshots.test.ts` (2026-10-02, v1.30.1).
+(the page also imports `assets/logo (1) (1).png` as the Nexis app icon and `assets/signature.png` for the nav signature mark).
 
 ---
 
@@ -79,20 +79,11 @@ Files, Recent Files, Source Control, Processes, Outline, Debugger, Tests, Build,
 
 (Note: the interactive demo's `SidebarRail` rail-icon list is similar but not identical — it includes items like "Files", "Recent Files", "Source Control" (badge 2), "Processes", "Ports", "Profiles", "REPL", "Outline", "Snippets", "Tests", "Database", "Build", "Code Review", "Agent Queue", "Symbol Search", "AI Refactor", "Share", "Prompt Templates", "Bookmarks", "Notes", "Shell Snippets", "SSH", "Release" — 22 icons plus a commit-history button.)
 
-## 7. Screenshot showcase (8 entries)
+## 7. Screenshot showcase (12 entries)
 
 Each: screenshot image (natural height, no crop) + colored dot + label + caption.
 
-| Label | Accent color | Image file | Caption |
-|---|---|---|---|
-| Welcome screen | blue `#60a5fa` | `welcome.png` | Clean start. Quick access to recent workspaces and projects the moment you open the app. |
-| Code editor | teal `#2dd4bf` | `editor.png` | Syntax highlighting, AI inline completions, breadcrumbs, and a minimap — all in one pane. |
-| AI agent | purple `#a78bfa` | `ai.png` | Bring your own API key. Claude, GPT-4, Gemini, or a local Ollama model — zero telemetry. |
-| Terminal | green `#4ade80` | `terminal.png` | Full PTY with WebGL rendering. Split panes, tab history, and shell integration built in. |
-| Markdown viewer | muted gray `#8a9db8` | `markdown.png` | Render README files, docs, and notes inline. No switching to a browser to preview markdown. |
-| Feature browser | orange `#f97316` | `features.png` | Every capability listed and searchable from inside the app. Discover what Nexis can do at a glance. |
-| Settings | orange `#f97316` | `settings.png` | Granular control over themes, keybinds, AI models, fonts, and workspace behaviour. |
-| Keyboard shortcuts | yellow `#fbbf24` | `shortcuts.png` | Every command is customizable. Remap anything from a searchable shortcuts panel. |
+The 12 showcase entries (label, accent, file, caption) live in `SCREENSHOTS` in `lib/content.ts`; that list is the source of truth.
 
 Grid layout: `repeat(2, 1fr)`, 32px gap, white cards with `#c8ccd2` border, 14px radius.
 
@@ -209,16 +200,8 @@ Fully functional mini shell simulator:
 |---|---|---|
 | `logo (1) (1).png` | `src/assets/logo (1) (1).png` | Nexis app icon (`NexisLogo`), used in nav and hero, 22% border-radius |
 | `signature.png` | `src/assets/signature.png` | Site signature mark in Nexis page nav, links to `#hero` |
-| `nexis/welcome.png` | `src/assets/nexis/welcome.png` | Screenshot showcase — Welcome screen |
-| `nexis/editor.png` | `src/assets/nexis/editor.png` | Screenshot showcase — Code editor |
-| `nexis/ai.png` | `src/assets/nexis/ai.png` | Screenshot showcase — AI agent |
-| `nexis/terminal.png` | `src/assets/nexis/terminal.png` | Screenshot showcase — Terminal |
-| `nexis/markdown.png` | `src/assets/nexis/markdown.png` | Screenshot showcase — Markdown viewer |
-| `nexis/features.png` | `src/assets/nexis/features.png` | Screenshot showcase — Feature browser |
-| `nexis/settings.png` | `src/assets/nexis/settings.png` | Screenshot showcase — Settings |
-| `nexis/shortcuts.png` | `src/assets/nexis/shortcuts.png` | Screenshot showcase — Keyboard shortcuts |
+| `*.webp` showcase shots | `assets/*.webp` | Screenshot showcase — see `SCREENSHOTS` in `lib/content.ts` |
 
-All 8 `nexis/*.png` screenshots have been copied into `nexis-site-assets/` in this repo for convenience.
 
 ## 11. Icons used (lucide-react)
 
