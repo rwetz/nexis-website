@@ -3,10 +3,10 @@
 ## Looping video showcase (replaces the removed terminal demo) — done 2026-10-02
 
 Shipped as `components/nexis/showcase-loop.tsx` (section `#tour`) with
-`public/video/nexis-showcase.{webm,mp4}` (2.5 MB / 2.1 MB, 1280×800, 25 s) and a
-poster. Source: the HyperFrames project in `Dev/nexis-showcase-video` (built from
-the real 1.30.1 screenshots, not `brag.mp4`, which shows the removed exit-status
-gutter). Re-render with `npm run render` there, then re-encode as in its README.
+`public/video/nexis-showcase.{webm,mp4}` (2.1 MB / 1.7 MB, 1280×800, 26.3 s) and a
+poster. Source: github.com/rwetz/nexis-showcase-video, cut from real app clips
+recorded by Nexis's `e2e/specs/clips.test.ts` (not `brag.mp4`, which shows the
+removed exit-status gutter). Re-render with `npm run render` there, then re-encode as in its README.
 The original plan follows for reference.
 
 The terminal demo was removed on 2026-10-02. The page now has no moving picture

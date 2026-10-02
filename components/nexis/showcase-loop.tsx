@@ -7,7 +7,7 @@ import { fadeUp } from "@/lib/motion";
 
 const POSTER = "/video/nexis-showcase-poster.jpg";
 const SUMMARY =
-  "A 25-second loop through the real app: Spotlight, the AI agent, the editor, Documents, Atlas and SVG Studio, returning to the welcome screen.";
+  "A 26-second loop recorded live from the app: the welcome screen, Spotlight, the terminal, the AI agent, Documents and theme switching.";
 
 /**
  * The looping product tour that replaced the interactive terminal demo.
