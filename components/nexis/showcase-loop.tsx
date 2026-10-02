@@ -109,7 +109,17 @@ export function ShowcaseLoop() {
           </div>
         </div>
 
-        <p className="mt-5 max-w-2xl text-sm text-white/60">{SUMMARY}</p>
+        <p className="mt-5 max-w-2xl text-sm text-white/60">
+          {SUMMARY}{" "}
+          <a
+            href="https://github.com/rwetz/nexis-showcase-video"
+            target="_blank"
+            rel="noreferrer"
+            className="text-white/80 underline underline-offset-4 hover:text-white"
+          >
+            Source on GitHub
+          </a>
+        </p>
       </div>
     </section>
   );
