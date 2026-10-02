@@ -56,7 +56,7 @@ export function ShortcutsPanels() {
             Packs, not clutter.
           </motion.h2>
           <motion.p {...fadeUp(0.1)} className="mt-4 max-w-md text-white/60">
-            Seven presets and nine feature packs tune the surface without
+            Seven presets and ten feature packs tune the surface without
             installing or removing code. Every tool remains a click away when
             its pack is enabled.
           </motion.p>

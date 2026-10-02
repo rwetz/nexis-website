@@ -13,7 +13,6 @@ const LINKS = [
   { label: "Features", href: "#features" },
   { label: "Shortcuts", href: "#shortcuts" },
   { label: "Screenshots", href: "#showcase" },
-  { label: "Demo", href: "#demo" },
 ];
 
 export function Nav() {

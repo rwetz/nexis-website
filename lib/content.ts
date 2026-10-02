@@ -12,6 +12,7 @@ import {
   Map,
   Activity,
   Paintbrush,
+  FileText,
   type LucideIcon,
 } from "lucide-react";
 
@@ -22,11 +23,11 @@ export const SITE = {
   name: "Nexis",
   tagline: "Everything in one window.",
   description:
-    "An open-source, AI-native terminal and developer environment with focused workbenches for code, local ML, repository intelligence, and SVG creation. No built-in usage analytics; use your own API keys or run local models.",
+    "An open-source, AI-native terminal and developer environment with focused workbenches for code, documents, web tools, local ML, repository intelligence, and SVG creation. No built-in usage analytics; use your own API keys or run local models.",
   repo: "https://github.com/rwetz/Nexis",
   releases: "https://github.com/rwetz/Nexis/releases",
   wiki: "https://wiki.nexisdev.org",
-  fallbackVersion: "v1.26.0",
+  fallbackVersion: "v1.30.1",
 } as const;
 
 // Fork / attribution block (Apache-2.0)
@@ -67,7 +68,7 @@ export const FEATURES: Feature[] = [
       "JS/TS, Python, Rust, HTML, CSS, Markdown, JSON",
       "AI inline autocomplete & per-hunk diff approval",
       "Vim mode + Prettier formatting",
-      "Minimap, breadcrumbs, F2 rename",
+      "Spotlight: files + commands with live preview",
     ],
   },
   {
@@ -79,6 +80,7 @@ export const FEATURES: Feature[] = [
       "Searches the codebase, spawns sub-agents",
       "14 cloud, compatible, and local providers",
       "Policy-gated tools + Git-backed checkpoints",
+      "Queue, Refactor, Review in one AI window",
     ],
   },
   {
@@ -123,12 +125,12 @@ export const FEATURES: Feature[] = [
   },
   {
     icon: Globe,
-    title: "Web Preview",
+    title: "Web Workbench",
     color: "#06b6d4",
     bullets: [
-      "Inline browser preview pane",
-      "Live reload alongside your editor",
-      "No context switching needed",
+      "Ports, HTTP client, and JSON/JWT/regex tools",
+      "Inline browser preview with live reload",
+      "Its own window, beside your code",
     ],
   },
   {
@@ -158,7 +160,7 @@ export const FEATURES: Feature[] = [
     bullets: [
       "Machine-wide repository status",
       "Isometric map — files as buildings",
-      "Open repos as workspaces or terminal tabs",
+      "53-week commit heatmap from local git",
     ],
   },
   {
@@ -181,6 +183,16 @@ export const FEATURES: Feature[] = [
       "SVG, PNG, favicon, SMIL, and CSS export",
     ],
   },
+  {
+    icon: FileText,
+    title: "Documents",
+    color: "#e2e8f0",
+    bullets: [
+      "Rich-text editing for Markdown and Word",
+      "Plain markdown saves back byte for byte",
+      "Local PDF export in three themes",
+    ],
+  },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -191,7 +203,8 @@ export type Shortcut = { action: string; keys: string[] };
 export const SHORTCUTS: Shortcut[] = [
   { action: "New terminal", keys: ["Ctrl", "T"] },
   { action: "New editor tab", keys: ["Ctrl", "E"] },
-  { action: "Quick open file", keys: ["Ctrl", "P"] },
+  { action: "Spotlight: files & commands", keys: ["Ctrl", "P"] },
+  { action: "Toggle bottom panel", keys: ["Ctrl", "J"] },
   { action: "Command palette", keys: ["Ctrl", "Shift", "P"] },
   { action: "Split pane", keys: ["Ctrl", "D"] },
   { action: "Open AI agent", keys: ["Ctrl", "I"] },
@@ -235,6 +248,8 @@ export const PANELS: string[] = [
   "Benchmark",
   "HTTP Client",
   "Web Tools",
+  "Documents",
+  "Problems",
   "Palette",
   "Backdrop",
   "Icon Set",
