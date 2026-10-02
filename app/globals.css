@@ -137,33 +137,9 @@
   /* Dark shell (shortcuts + CTA bands) */
   --color-shell: #181d26;
 
-  /* Interactive-demo dark tokens (nexis-site.md §8.1) */
-  --color-n-bg: #1b2232;
-  --color-n-card: #242e3f;
-  --color-n-hover: #2d3a4f;
-  --color-n-fg: #f0f4f9;
-  --color-n-primary: #d8e4ef;
-  --color-n-muted: #2c3a50;
-  --color-n-mutedfg: #8a9db8;
-  --color-n-ring: #4d6480;
-  --color-n-green: #4ade80;
-  --color-n-red: #f87171;
-  --color-n-yellow: #fbbf24;
-  --color-n-blue: #60a5fa;
-  --color-n-purple: #a78bfa;
-  --color-n-teal: #2dd4bf;
-  --color-n-cyan: #06b6d4;
-  --color-n-orange: #f97316;
-  --color-n-pink: #ec4899;
 
   /* Radius extras */
   --radius-pill: 9999px;
-}
-
-/* rgba border tokens for the dark demo (can't live in @theme cleanly) */
-:root {
-  --n-border: rgba(255, 255, 255, 0.09);
-  --n-border-bright: rgba(255, 255, 255, 0.13);
 }
 
 @layer base {
@@ -309,20 +285,3 @@
   }
 }
 
-/* Thin custom scrollbars inside the demo panes */
-.nx-scroll::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-.nx-scroll::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 9999px;
-}
-.nx-scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-@keyframes nx-bounce {
-  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
-  40% { transform: translateY(-3px); opacity: 1; }
-}
