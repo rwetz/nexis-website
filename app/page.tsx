@@ -3,6 +3,7 @@ import { Hero } from "@/components/nexis/hero";
 import { FeaturesGrid } from "@/components/nexis/features-grid";
 import { ShortcutsPanels } from "@/components/nexis/shortcuts-panels";
 import { ScreenshotShowcase } from "@/components/nexis/screenshot-showcase";
+import { ShowcaseLoop } from "@/components/nexis/showcase-loop";
 import { CTA } from "@/components/nexis/cta";
 import { Footer } from "@/components/nexis/footer";
 import { MotionProvider } from "@/components/nexis/motion-provider";
@@ -17,6 +18,7 @@ export default function Home() {
         <FeaturesGrid />
         <ShortcutsPanels />
         <ScreenshotShowcase />
+        <ShowcaseLoop />
         <CTA />
       </main>
       <Footer />
