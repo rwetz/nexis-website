@@ -16,7 +16,7 @@ const LINKS = [
 export function Nav() {
 
   return (
-    <header className="dot-grid sticky top-0 z-50 border-b border-hairline bg-canvas/80 backdrop-blur-md">
+    <header className="nexis-nav sticky top-0 z-50 border-b border-hairline bg-canvas/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5 sm:px-8">
         {/* Left: signature / logo / wordmark */}
         <div className="flex items-center gap-3">
