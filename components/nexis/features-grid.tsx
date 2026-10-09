@@ -1,8 +1,5 @@
-"use client";
 
-import { motion } from "framer-motion";
 import { FEATURES } from "@/lib/content";
-import { fadeUp, STAGGER } from "@/lib/motion";
 import { SpotlightCard } from "@/components/nexis/react-bits/spotlight-card";
 import { ChevronDown } from "lucide-react";
 
@@ -10,24 +7,23 @@ export function FeaturesGrid() {
   return (
     <section id="features" className="features-stage border-b border-white/10 text-white">
       <div className="mx-auto max-w-[1200px] px-5 py-20 sm:px-8 sm:py-[80px]">
-        <motion.p {...fadeUp(0)} className="caption-label text-brand">
+        <p className="caption-label text-brand">
           The workbench
-        </motion.p>
-        <motion.h2 {...fadeUp(0.05)} className="feature-heading mt-3">
+        </p>
+        <h2 className="feature-heading mt-3">
           Less switching.<br /><span>More building.</span>
-        </motion.h2>
-        <motion.p {...fadeUp(0.1)} className="mt-4 max-w-xl text-white/60">
+        </h2>
+        <p className="mt-4 max-w-xl text-white/60">
           A terminal, editor, AI agent, local ML lab, repository map, and SVG
           studio — organized around the work you actually do.
-        </motion.p>
+        </p>
 
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.slice(0, 6).map((f, i) => {
+          {FEATURES.slice(0, 6).map((f) => {
             const Icon = f.icon;
             return (
-              <motion.div
+              <div
                 key={f.title}
-                {...fadeUp(i * STAGGER.card)}
                 className="group"
               >
                 <SpotlightCard className="h-full min-h-[230px] p-6">
@@ -44,7 +40,7 @@ export function FeaturesGrid() {
                     ))}
                   </ul>
                 </SpotlightCard>
-              </motion.div>
+              </div>
             );
           })}
         </div>
