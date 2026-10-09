@@ -12,7 +12,7 @@ export function NexisLogo({
 }) {
   return (
     <Image
-      src="/nexis/logo.png"
+      src="/nexis/logo-small.webp"
       alt="Nexis"
       width={size}
       height={size}

@@ -92,3 +92,26 @@ Original site code is [MIT](LICENSE). The adapted React Bits Magnet and
 SpotlightCard components retain their separate MIT + Commons Clause terms in
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). Nexis itself is Apache-2.0,
 forked from [Terax](https://github.com/crynta/terax-ai) by crynta.
+
+## Static production preview and performance
+
+`npm run build` renders the site with Next.js and finalizes the static export.
+The published HTML uses the small `public/site.js` enhancement script for the
+menu, screenshot gallery, and viewport-aware video. It does not load React
+hydration or Next's client router. Links are ordinary document/anchor links.
+The export finalizer fails if a project client component is added, so a future
+interactive feature cannot silently lose its behavior. Test the production
+export, not only the Next development server, when changing these interactions.
+
+`npm run preview` serves `out/` at `http://127.0.0.1:4173` with gzip and cache
+headers. The preview server represents compressed static hosting; it is not
+production deployment verification. Lighthouse uses its default mobile
+simulation, with a separate `--preset=desktop` run for desktop.
+
+Images are committed derivatives of the real app captures. Regenerate with
+`node scripts/optimize-images.mjs` (Sharp is installed by Next). Fonts are renamed
+Latin subsets of Inter and JetBrains Mono, covering weights 400-600. Original
+WOFF2 files and OFL licenses are in `assets/fonts/`. Regenerate with
+`python scripts/subset-fonts.py` after installing `fonttools` and `brotli`.
+Characters outside the subset use the browser's font fallback. Fonts use optional
+loading to avoid a late font swap on slow connections.

@@ -76,6 +76,11 @@ export function Footer() {
         ))}
       </div>
 
+      <div className="mx-auto max-w-[1200px] px-5 pb-8 text-sm leading-relaxed text-body sm:px-8">
+        Forked from <a href={ATTRIBUTION.terax} className="underline underline-offset-4">Terax</a> by{" "}
+        <a href={ATTRIBUTION.crynta} className="underline underline-offset-4">crynta</a>, extended with additional panels
+        and AI integrations under the {ATTRIBUTION.license} license.
+      </div>
       <div className="border-t border-hairline">
         <div className="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-2 px-5 py-6 text-sm text-ink-muted sm:flex-row sm:px-8">
           <span>

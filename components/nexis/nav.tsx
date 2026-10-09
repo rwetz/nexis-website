@@ -1,13 +1,10 @@
-"use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { BookOpen, Menu, X } from "lucide-react";
+import { BookOpen, Menu } from "lucide-react";
 import { Btn } from "@/components/nexis/ui/btn";
 import { GitHubIcon, NexisLogo } from "@/components/nexis/ui/logo";
-import signatureImg from "@/assets/signature.png";
+import signatureImg from "@/assets/signature-small.webp";
 import { SITE } from "@/lib/content";
-import { cn } from "@/lib/utils";
 
 const LINKS = [
   { label: "Features", href: "#features" },
@@ -17,7 +14,6 @@ const LINKS = [
 ];
 
 export function Nav() {
-  const [open, setOpen] = useState(false);
 
   return (
     <header className="dot-grid sticky top-0 z-50 border-b border-hairline bg-canvas/80 backdrop-blur-md">
@@ -76,29 +72,27 @@ export function Nav() {
         <button
           type="button"
           className="rounded-md p-2 text-ink md:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
+          data-menu-toggle
+          aria-label="Open menu"
+          aria-expanded="false"
           aria-controls="mobile-navigation"
         >
-          {open ? <X className="size-6" /> : <Menu className="size-6" />}
+          <Menu className="size-6" />
         </button>
       </div>
 
       {/* Mobile menu */}
       <div
         id="mobile-navigation"
-        className={cn(
-          "overflow-hidden border-t border-hairline bg-canvas md:hidden",
-          open ? "block" : "hidden"
-        )}
+        hidden
+        className="overflow-hidden border-t border-hairline bg-canvas md:hidden"
       >
         <nav className="mx-auto flex max-w-[1200px] flex-col gap-1 px-5 py-4 sm:px-8">
           {LINKS.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              onClick={() => setOpen(false)}
+
               className="rounded-md px-2 py-2 text-sm font-medium text-body hover:bg-surface-strong hover:text-ink"
             >
               {l.label}
@@ -106,7 +100,7 @@ export function Nav() {
           ))}
           <a
             href={SITE.wiki}
-            onClick={() => setOpen(false)}
+
             className="flex items-center gap-2 rounded-md px-2 py-2 text-sm font-medium text-body hover:bg-surface-strong hover:text-ink"
           >
             <BookOpen className="size-4" /> Wiki
