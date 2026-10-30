@@ -115,3 +115,12 @@ WOFF2 files and OFL licenses are in `assets/fonts/`. Regenerate with
 `python scripts/subset-fonts.py` after installing `fonttools` and `brotli`.
 Characters outside the subset use the browser's font fallback. Fonts use optional
 loading to avoid a late font swap on slow connections.
+
+---
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/brand/heptagram-white.svg">
+    <img src="docs/brand/heptagram-black.svg" alt="heptagram" width="48">
+  </picture>
+</p>
