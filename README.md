@@ -1,4 +1,19 @@
-# Nexis marketing site
+<p align="center">
+  <img src="assets/logo.png" width="128" alt="Nexis logo">
+</p>
+
+<h1 align="center">Nexis marketing site</h1>
+
+<p align="center">
+  The single-page marketing site for Nexis, live at <a href="https://nexisdev.org">nexisdev.org</a>.
+</p>
+
+<p align="center">
+  <a href="https://github.com/rwetz/nexis-website/actions/workflows/deploy.yml"><img src="https://github.com/rwetz/nexis-website/actions/workflows/deploy.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-222B36?labelColor=101319" alt="License"></a>
+</p>
+
+![The Nexis editor, as shown on the site](assets/editor.webp)
 
 The single-page marketing site for **[Nexis](https://github.com/rwetz/Nexis)**, an
 open-source, AI-native terminal & developer environment (Tauri + React, under
